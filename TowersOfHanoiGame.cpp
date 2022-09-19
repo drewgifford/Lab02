@@ -2,6 +2,7 @@
 #include <string>
 #include <cmath>
 #include "TowersOfHanoiGame.h"
+#include <fstream>
 
 // UTILITY FUNCTIONS
 
@@ -174,12 +175,28 @@ void TowersOfHanoiGame::SaveToFile(std::string fileName){
     ArrayBasedQueue queue = m_moves;
 
     // Can you write this to a file called [fileName].txt?
+    std::ofstream myfile;
+    myfile.open(fileName, std::ofstream::out | std::ofstream::trunc);
+    if(myfile.is_open())
+    {
+        int m_count = queue.getCount();
+        std::string * m_values = queue.getArray();
 
+        for (int i = 0; i < m_count; i++)
+	    {
+		    myfile << m_values[i] << std::endl;
+	    }
+        myfile.flush();
+        myfile.close();
+    } 
+    else 
+    {
+        std::cout << "File is not open!" << std::endl;
+    }
 }
 
 
 // MINOR FUNCTIONS
-
 TowersOfHanoiGame::~TowersOfHanoiGame(){
     // Delete memory of the stacks
     m_stacks = NULL;

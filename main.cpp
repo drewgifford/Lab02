@@ -47,15 +47,18 @@ int main(){
 				break;
 
 			case MoveResult::EMPTY_STACK:
-				std::cout << "Cannot move a ring from an empty stack" << std::endl;
+				std::cout << "Cannot move a ring from an empty stack." << std::endl;
 				break;
 
 			case MoveResult::INVALID_MOVE:
-				std::cout << "Cannot place a ring on top of a smaller ring" << std::endl;
+				std::cout << "Cannot place a ring on top of a smaller ring." << std::endl;
 				break;
 
 			case MoveResult::INVALID_STACK:
 				std::cout << from << " or " << to << " is not a valid stack." << std::endl;
+				break;
+			case MoveResult::SAME_STACK:
+				std::cout << "Cannot move a ring to a stack it is already in." << std::endl;
 				break;
 
 			default:

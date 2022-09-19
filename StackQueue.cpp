@@ -7,7 +7,7 @@
 
 ArrayBasedStack::ArrayBasedStack()
 {
-	int size = 10; // Configurable size
+	int size = 1000; // Configurable size
 
 	m_size = size;
 	m_values = new int[size];
@@ -95,7 +95,7 @@ ArrayBasedStack::~ArrayBasedStack()
 
 ArrayBasedQueue::ArrayBasedQueue()
 {
-	int size = 10;
+	int size = 1000;
 
 	m_size = size;
 	m_values = new std::string[size];
