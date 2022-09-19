@@ -103,5 +103,5 @@ int main(){
 	//ArrayBasedQueue moves = game.GetMoves();
 
 	
-	
+	return 0;
 };
