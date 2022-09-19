@@ -170,6 +170,18 @@ void TowersOfHanoiGame::PrintWinString(){
     std::cout << center(resultsSavedString, width) << std::endl;
 }
 
+void TowersOfHanoiGame::PrintLoseString(){
+    int colWidth = (GetDiscsCount() * 2) + 3;
+
+    int width = colWidth * 3;
+
+    std::string moveString = "You processed " + std::to_string(m_moves.getCount()) + " moves.";
+    std::string loseString = "Input moves did not succeed.";
+
+    std::cout << center(moveString, width) << std::endl;
+    std::cout << center(loseString, width) << std::endl;
+}
+
 void TowersOfHanoiGame::SaveToFile(std::string fileName){
 
     ArrayBasedQueue queue = m_moves;
@@ -186,6 +198,7 @@ void TowersOfHanoiGame::SaveToFile(std::string fileName){
 	    {
 		    myfile << m_values[i] << std::endl;
 	    }
+        myfile << "-1";
         myfile.flush();
         myfile.close();
     } 

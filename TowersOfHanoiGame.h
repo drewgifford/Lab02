@@ -18,6 +18,7 @@ class TowersOfHanoiGame {
         virtual MoveResult MoveDisc(int, int);
         virtual bool CheckWin();
         virtual void PrintWinString();
+        virtual void PrintLoseString();
         virtual void PrintTowers();
         virtual void SaveToFile(std::string);
 
